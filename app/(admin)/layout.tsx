@@ -1,5 +1,6 @@
 import CmsNavbar from "../components/CmsNavbar";
 import { Provider } from "../utils/Provider";
+import "./globals.css";
 
 export const metadata = {
   title: "Next.js",
