@@ -5,12 +5,17 @@ import PostComponent from "../components/PostComponent";
 
 async function getPosts() {
   const query = `
-    *[_type == "post"] {
-      title,
+  *[_type == "post"] {
+    title,
+    slug,
+    publishedAt,
+    excerpt,
+    tags[]-> {
+      _id,
       slug,
-      publishedAt,
-      excerpt,
-    } `;
+      name
+    }
+  }   `;
   const data = await client.fetch(query);
   return data;
 }
