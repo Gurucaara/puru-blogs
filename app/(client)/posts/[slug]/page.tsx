@@ -6,6 +6,7 @@ import { PortableText } from "@portabletext/react";
 import { VT323 } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import React from "react";
 interface Params {
   params: {
@@ -35,10 +36,17 @@ async function getPost(slug: string) {
   return post;
 }
 
+export const revalidate = 60;
+
 const page = async ({ params }: Params) => {
-  console.log(params, "params");
+  // console.log(params, "params");
   const post: Post = await getPost(params?.slug);
-  console.log(post, "post");
+  // console.log(post, "post");
+
+  if (!post) {
+    notFound();
+  }
+
   return (
     <div>
       <Header title={post?.title} />

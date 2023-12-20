@@ -24,10 +24,10 @@ export const revalidate = 60;
 
 export default async function Home() {
   const posts: Post[] = await getPosts();
-  console.log(posts, "posts");
+  // console.log(posts, "posts");
   return (
     <div>
-      <Header title="Articles" />
+      <Header title="Articles" tags />
       <div>
         {posts?.length > 0 &&
           posts?.map((post) => <PostComponent key={post?._id} post={post} />)}
