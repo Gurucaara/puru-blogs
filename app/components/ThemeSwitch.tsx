@@ -19,19 +19,17 @@ const ThemeSwitch = () => {
 
   return (
     <div className="space-x-5">
-      <Link href={"https://puru-blogs.vercel.app/"}>
+      <Link href={"/"}>
         <button className="border border-purple-500 rounded-2xl p-1 hover:bg-purple-500 hover:bg-opacity-10 dark:hover:bg-amber-50">
           <HomeIcon />
         </button>
       </Link>
-      <Link href={""}>
-        <button
-          className="border border-purple-500 rounded-2xl p-1 hover:bg-purple-500 hover:bg-opacity-10 dark:hover:bg-amber-50"
-          // onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-        >
+      <Link href={"https://puru-rana.vercel.app"} target="_blank">
+        <button className="border border-purple-500 rounded-2xl p-1 hover:bg-purple-500 hover:bg-opacity-10 dark:hover:bg-amber-50">
           <UserIcon />
         </button>
       </Link>
+
       <button
         className="border border-purple-500 rounded-2xl p-1 hover:bg-purple-500 hover:bg-opacity-10 dark:hover:bg-amber-50"
         onClick={() => setTheme(theme === "dark" ? "light" : "dark")}

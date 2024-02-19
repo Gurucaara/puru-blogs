@@ -19,7 +19,7 @@ const Header = ({ title = "", tags = false }: Props) => {
         </div>
       )}
     </header>
-  ); 
+  );
 };
 
 export default Header;
